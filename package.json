@@ -1,0 +1,26 @@
+{
+  "name": "beat-sync",
+  "version": "1.0.0",
+  "description": "Synchronize audio clients using local network and/or bluetooth.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "auto": "nodemon server/index.js",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brianbreitsch/beat-sync.git"
+  },
+  "keywords": [
+    "audio",
+    "client",
+    "metronome"
+  ],
+  "author": "Jack Hall, Nathan Breitsch, Brian Breitsch",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/brianbreitsch/beat-sync/issues"
+  },
+  "homepage": "https://github.com/brianbreitsch/beat-sync#readme"
+}
