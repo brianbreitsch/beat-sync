@@ -17,15 +17,11 @@
 
 <body>
   <h1>Beat Sync</h1>
-  <h2>TEST CLIENT</h2>
+  <h2>TEST AUDIO PLAYBACK</h2>
 
-  <input type="file" id="fileElem" multiple accept="image/*" style="display:none" onchange="handleFiles(this.files)">
-  <a href="#" id="fileSelect">Select some files</a>
-  <div id="fileList">
-    <p>No files selected!</p>
-  </div>
   <button id="play">Play</button>
   <button id="stop">Stop</button>
+  <input type="number" id="offset" placeholder="offset"/>
   <script src="js/audio-playback.js"></script>
 </body>
 </html>

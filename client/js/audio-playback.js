@@ -7,13 +7,15 @@ class AudioPlayer {
         this.source = null
     }
 
-    play(frame) {
+    play(epochMs) {
         // BufferSource is single use only
         this.source = this.audioContext.createBufferSource()
         this.source.connect(this.destination)
-        // if buffer is a true buffer, this will not work
         this.source.buffer = this.songBuffer
-        this.source.start(frame)
+        // offset
+        let offsetSec = Math.max((Date.now() - epochMs) / 1000, 0)
+        let when = this.audioContext.currentTime + ((epochMs - Date.now()) / 1000)
+        this.source.start(when, offsetSec)
     }
 
     stop() {
@@ -71,8 +73,16 @@ window.onload = () => {
     audioPlayer.loadSongAsync(exampleUrl)
         .catch( (e) => { console.log(e) })
 
+    var offsetSec = 1;
+    document.getElementById('offset')
+            .addEventListener('change', () => {
+               offsetSec = parseFloat(document.getElementById('offset').value)
+            })
+
     document.getElementById('play')
-            .addEventListener('click', () => { audioPlayer.play() })
+            .addEventListener('click', () => { 
+                audioPlayer.play(Date.now() - offsetSec * 1000) 
+            })
     document.getElementById('stop')
             .addEventListener('click', () => { audioPlayer.stop() })
 }
