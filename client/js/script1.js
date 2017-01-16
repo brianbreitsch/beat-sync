@@ -4,7 +4,7 @@ var fileSelect = document.getElementById("fileSelect"),
     fileElem = document.getElementById("fileElem"),
     fileList = document.getElementById("fileList");
 
-fileSelect.addEventListener("click", function (e) {
+fileSelect.addEventListener("click", (e) => {
   if (fileElem) {
     fileElem.click();
   }
