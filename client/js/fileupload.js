@@ -17,7 +17,7 @@ function FileUpload(img, file) {
           var canvas = self.ctrl.ctx.canvas;
           canvas.parentNode.removeChild(canvas);
       }, false);
-  xhr.open("POST", "http://demos.hacks.mozilla.org/paul/demos/resources/webservices/devnull.php");
+  xhr.open("POST", "/upload");
   xhr.overrideMimeType('text/plain; charset=x-user-defined-binary');
   reader.onload = function(evt) {
     xhr.send(evt.target.result);
